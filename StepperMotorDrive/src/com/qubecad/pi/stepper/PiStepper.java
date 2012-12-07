@@ -1,3 +1,16 @@
+/*
+ * 
+ * Example of a Stepper Motor Control for the Raspberry Pi.
+ * 
+ * Based on an example by Matt Hawkins
+ * 
+ */
+
+
+
+
+
+
 package com.qubecad.pi.stepper;
 
 import java.util.HashMap;
@@ -12,7 +25,7 @@ public class PiStepper {
 
 	/**
 	 * 
-	 * Driving a Stepper Motor From Java Example
+	 * Driving a Stepper Motor From Java 
 	 * 
 	 * @param args
 	 * @throws InterruptedException 
@@ -31,16 +44,16 @@ public class PiStepper {
 		GpioPinDigitalOutput pind = gpio.provisionDigitalOuputPin(RaspiPin.GPIO_11, "Pin D", PinState.LOW);
 
 
-		HashMap driveLogic=new HashMap();
+		HashMap<Integer, String> driveLogic=new HashMap<Integer, String>();
 
-		driveLogic.put(0, "1,0,0,1");
-		driveLogic.put(1, "0,0,0,1");
-		driveLogic.put(2, "0,0,1,1");
-		driveLogic.put(3, "0,0,1,0");
-		driveLogic.put(4, "0,1,1,0");
-		driveLogic.put(5, "0,1,0,0");
-		driveLogic.put(6, "1,1,0,0");
-		driveLogic.put(7, "1,0,0,0");
+		driveLogic.put(0, "1001");
+		driveLogic.put(1, "0001");
+		driveLogic.put(2, "0011");
+		driveLogic.put(3, "0010");
+		driveLogic.put(4, "0110");
+		driveLogic.put(5, "0100");
+		driveLogic.put(6, "1100");
+		driveLogic.put(7, "1000");
 
 		System.out.print("Driving motor");
 		while (true) {
